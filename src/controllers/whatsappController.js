@@ -9,10 +9,10 @@ const verifyToken = (req, res) => {
         if(challenge != null  && token != null && token == acccessToken){
             res.status(200).send(challenge);
         }else {
-            res.status(400).send();
+            res.status(400).send("else");
         }
-    }catch{
-        res.status(400).send();
+    }catch(e){
+        res.status(400).send(e);
     }    
 
 }
