@@ -10,7 +10,7 @@ app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 
 //routes
-app.use("/whatsapp", whatsappRouter);
+app.use("/webhooks", whatsappRouter);
 app.use("/", indexRouter);
 
 //server

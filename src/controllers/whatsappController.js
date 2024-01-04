@@ -4,12 +4,12 @@ const myConsole = new console.Console(fs.createWriteStream('./logs.txt'))
 const verifyToken = (req, res) => {
     try{
         const acccessToken = 'BASDLASDMLMA231LKJKN32';
-        const token = req.query("hub.verify_token");
-        const challenge = req.query("hub.challenge");
+        const token = req.query['hub.verify_token'];
+        const challenge = req.query['hub.challenge'];
         if(challenge != null  && token != null && token == acccessToken){
             res.status(200).send(challenge);
         }else {
-            res.status(400).send("else");
+            res.status(400).send();
         }
     }catch(e){
         res.status(400).send(e);
