@@ -6,14 +6,13 @@ const verifyToken = (req, res) => {
         const acccessToken = 'asd233k2312sdasdasdasdas';
         const token = req.query("hub.verify_token");
         const challenge = req.query("hub.challenge");
-        if(challenge != null  && token == acccessToken){
+        if(challenge != null  && token != null && token == acccessToken){
             res.status(200).send(challenge);
-
         }else {
-            res.send({status: 400, message:'invalid token'});
+            res.status(400).send();
         }
     }catch{
-        res.send({status: 500, message:'internal server error'});
+        res.status(400).send();
     }    
 
 }
