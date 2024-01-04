@@ -3,7 +3,7 @@ const myConsole = new console.Console(fs.createWriteStream('./logs.txt'))
 
 const verifyToken = (req, res) => {
     try{
-        const acccessToken = 'asd233k2312sdasdasdasdas';
+        const acccessToken = 'BASDLASDMLMA231LKJKN32';
         const token = req.query("hub.verify_token");
         const challenge = req.query("hub.challenge");
         if(challenge != null  && token != null && token == acccessToken){
