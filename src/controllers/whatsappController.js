@@ -20,16 +20,13 @@ const verifyToken = (req, res) => {
 
 const recivedMessage = (req, res) => {
     try{
-        const entry = req.body["entry"][0];
-        const changes = entry["changes"][0];
-        const value = changes["value"];
-        const message = value["messages"];
+        const value = req.body.value;
+        const message = value.messages[0];
         myConsole.log(message)
         res.status(200).send("EVENT_RECIVED");
     }catch (e) {
         myConsole.log(e)
         res.status(500).send("EVENT_RECIVED");
-
     }
 
 }
