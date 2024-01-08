@@ -22,7 +22,7 @@ const recivedMessage = (req, res) => {
     try{
         const value = req.body.value;
         const message = value.messages[0];
-        myConsole.log(message)
+        myConsole.log(req.body)
         res.status(200).send("EVENT_RECIVED");
     }catch (e) {
         myConsole.log(e)
